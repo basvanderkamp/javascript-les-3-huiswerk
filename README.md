@@ -1,3 +1,4 @@
+
 # Opdracht beschrijving
 
 Deze opdracht bestaat uit meerdere opdrachtjes om met functies, scope en for-loops te kunnen oefenen. Om de opdracht te maken kun je de opdracht clonen of downloaden naar jouw eigen computer.
