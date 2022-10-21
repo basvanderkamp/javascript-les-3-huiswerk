@@ -30,6 +30,7 @@ console.log(getEmailDomain("a.wiersma@outlook.com"))
 
 
 
+
 /* Opdracht  2 */
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
 // ---- Verwachte uitkomsten:
@@ -67,27 +68,27 @@ typeOfEmail("a.wiersma@outlook.com")
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
 
 function checkEmailValidity (email) {
-    /* if (email.includes("@") && !email.includes(",") && email.length(-1) !== ".") {
+     if (email.includes("@") && !email.includes(",") && email.slice(-1) !== ".") {
          console.log( email + " is valid");
 
-     }else {
+     }else if (email.slice(-1) === "." || email.includes(",") || !email.includes("@")) {
          console.log("email not valid");
-     }*/
+     }
 
     switch (true) {
-        case (email.includes("@") && !email.includes(",") && email.length -1 !== "."):
+        case email.includes("@") && !email.includes(",") && email.slice(-1) !== ".":
                 console.log("geeft true - want @ en punt op de juiste plek");
             break;
 
-        case (email.slice(-1) === "."):
+        case email.slice(-1) === ".":
                 console.log("geeft false - want de punt mag niet als laatst");
             break;
 
-        case (email.includes(",")):
+        case email.includes(","):
                 console.log("geeft false - want er staat een komma in");
             break;
 
-        case (!email.includes("@")):
+        case !email.includes("@"):
                 console.log("geeft false - want geen @");
             break;
 
@@ -96,10 +97,12 @@ function checkEmailValidity (email) {
     }
 
 
+
+
 }
 
 checkEmailValidity("n.eeken@novi.nl");
 checkEmailValidity("tessmellink@novi,nl");
-checkEmailValidity("n.eeken@novnl.")
+checkEmailValidity("n.eekennov.nl")
 checkEmailValidity("n.eeken@novinl.")
 checkEmailValidity("tessmellink@novi,nl")
