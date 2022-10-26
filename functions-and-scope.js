@@ -1,8 +1,9 @@
+
 // Je gaat functies schrijven die we kunnen hergebruiken om een lijst met eindcijfers van studenten te checken. Je zult over de cijfers heen moeten itereren (hoe pak je dat aan?),
-// maar ook een manier moeten vinden om hetgeen dat je verzamelt ergens te bundelen. Op deze manier zul je ontdekken hoe je omgaat met scope. Pak vooral het hoofdstuk op EdHub over for-loops er nog eens bij!
+// maar ook een manier moeten vinden om het geen dat je verzamelt ergens te bundelen. Op deze manier zul je ontdekken hoe je omgaat met scope. Pak vooral het hoofdstuk op EdHub over for-loops er nog eens bij!
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
 
-const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+
 
 /* Opdracht  1: Cum Laude */
 
@@ -13,6 +14,27 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorg ik ervoor dat dit ook werkt wanneer de array 100 entries bevat?
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
+
+const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+const grades2 = [6,4,5];
+const grades3 = [8,9,4,6,10]
+
+function cumLaudeGrades(arr) {
+    let counter = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 7){
+            counter += 1;
+        }
+    } return counter;
+}
+const result1 = cumLaudeGrades(grades);
+const result2 = cumLaudeGrades(grades2);
+const result3 = cumLaudeGrades(grades3);
+console.log(result1);
+console.log(result2);
+console.log(result3);
+
+
 
 // ---- Verwachte uitkomst: 6
 
@@ -39,6 +61,25 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Wat moet ik verzamelen uit de array van cijfers om uiteindelijk een gemiddelde te kunnen berekenen?
 // * Hoe zorgt ik ervoor dat ik alle waardes uit de array kan langslopen, ook als de array wel 100 entries zou bevatten?
 // Log het antwoord in de terminal.
+
+function averageGrade (arr) {
+
+    let countTotal = 0;
+    let avarages = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+        countTotal += arr[i];
+        }
+
+        avarages = countTotal / arr.length;
+        return avarages.toFixed(2);
+    }
+
+console.log(averageGrade(grades))
+console.log(averageGrade(grades2))
+console.log(averageGrade(grades3))
+
+
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
@@ -69,6 +110,21 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Op welke conditie moet ik checken?
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
 // Log het antwoord in de terminal.
+
+function highestGrade(arr) {
+    let highNumber = arr[0];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >  highNumber) {
+            highNumber = arr[i];
+        }
+    }
+    return highNumber;
+}
+
+console.log(highestGrade(grades));
+console.log(highestGrade(grades2));
+console.log(highestGrade(grades3));
 
 // ---- Verwachte uitkomst: 9
 
